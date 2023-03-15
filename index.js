@@ -29,10 +29,9 @@ function player_turn(a) {
   }
 
   if (player1.won) won("Player1");
-
   if (player2.won) won("Player2 won!");
+  // Draw remaining
 }
-// Decider function is remaining
 function decider(str) {
   if (
     (cells[0] == str && cells[1] == str && cells[2] == str) ||
@@ -51,6 +50,7 @@ function won(s) {
   for (let index = 0; index < 9; index++) {
     document.getElementById(index).setAttribute("disabled", "");
   }
+  document.getElementById("play").style.visibility = "visible";
 }
 function playagain() {
   window.location.reload();
