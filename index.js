@@ -16,7 +16,7 @@ function player_turn(a) {
     player1.turn++;
     document.getElementById("header").innerHTML = "Player2 turn";
     cells[a] = "X";
-    player1.won = decider("X");
+    if (player1.turn >= 3) player1.won = decider("X");
   }
   //player 2
   else {
@@ -25,11 +25,14 @@ function player_turn(a) {
     player2.turn++;
     document.getElementById("header").innerHTML = "Player1 turn";
     cells[a] = "O";
-    player2.won = decider("O");
+    if (player2.turn >= 3) player2.won = decider("O");
   }
-
   if (player1.won) won("Player1");
-  if (player2.won) won("Player2 won!");
+  if (player2.won) won("Player2");
+  if (player1.turn == 5) {
+    document.getElementById("header").innerHTML = "Draw!";
+    document.getElementById("play").style.visibility = "visible";
+  }
   // Draw remaining
 }
 function decider(str) {
