@@ -1,0 +1,27 @@
+#container{
+    width: 400px;
+    height: 350px;
+    margin: auto ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+div button{
+    height: 100px;
+    width: 100px;
+    flex-basis: 28%;
+    margin: 0 10px;
+    font-size: 460%;
+    padding: 0;
+    font-weight: bolder;
+}
+#header{
+    text-align: center;
+    margin: 100px;
+}
+#play{
+    margin: auto;
+    margin-top: 100px;
+    display: block;
+}
