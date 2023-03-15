@@ -1,6 +1,6 @@
 class player {
   constructor() {
-    this.won = 0;
+    this.won = false;
     this.turn = 0;
   }
 }
