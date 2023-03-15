@@ -38,13 +38,13 @@ function player_turn(a) {
 function decider(str) {
   if (
     (cells[0] == str && cells[1] == str && cells[2] == str) ||
-    (cells[0] == str && cells[4] == str && cells[8] == str) ||
+    (cells[3] == str && cells[4] == str && cells[5] == str) ||
+    (cells[6] == str && cells[7] == str && cells[8] == str) ||
     (cells[0] == str && cells[3] == str && cells[6] == str) ||
     (cells[1] == str && cells[4] == str && cells[7] == str) ||
-    (cells[2] == str && cells[4] == str && cells[6] == str) ||
     (cells[2] == str && cells[5] == str && cells[8] == str) ||
-    (cells[3] == str && cells[4] == str && cells[5] == str) ||
-    (cells[6] == str && cells[7] == str && cells[8] == str)
+    (cells[0] == str && cells[4] == str && cells[8] == str) ||
+    (cells[2] == str && cells[4] == str && cells[6] == str)
   )
     return true;
 }
