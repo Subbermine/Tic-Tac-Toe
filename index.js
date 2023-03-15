@@ -11,7 +11,6 @@ var cells = [];
 function player_turn(a) {
   //player 1
   if (player1.turn == player2.turn) {
-    document.getElementById(a).setAttribute("disabled", "");
     document.getElementById(a).innerHTML = "X";
     player1.turn++;
     document.getElementById("header").innerHTML = "Player2 turn";
@@ -20,20 +19,20 @@ function player_turn(a) {
   }
   //player 2
   else {
-    document.getElementById(a).setAttribute("disabled", "");
     document.getElementById(a).innerHTML = "O";
     player2.turn++;
     document.getElementById("header").innerHTML = "Player1 turn";
     cells[a] = "O";
     if (player2.turn >= 3) player2.won = decider("O");
   }
+  document.getElementById(a).setAttribute("disabled", "");
+  document.getElementById(a).style.cursor = "initial";
   if (player1.won) won("Player1");
   if (player2.won) won("Player2");
   if (player1.turn == 5) {
     document.getElementById("header").innerHTML = "Draw!";
     document.getElementById("play").style.visibility = "visible";
   }
-  // Draw remaining
 }
 function decider(str) {
   if (
@@ -52,6 +51,7 @@ function won(s) {
   document.getElementById("header").innerHTML = s + " won!";
   for (let index = 0; index < 9; index++) {
     document.getElementById(index).setAttribute("disabled", "");
+    document.getElementById(index).style.cursor = "initial";
   }
   document.getElementById("play").style.visibility = "visible";
 }
