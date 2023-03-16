@@ -16,6 +16,13 @@ function player_turn(a) {
     document.getElementById("header").innerHTML = "Player2 turn";
     cells[a] = "X";
     if (player1.turn >= 3) player1.won = decider("X");
+    document
+      .getElementById("body")
+      .animate(
+        [{ "background-color": "#6f92a3" }, { "background-color": "#a36f6f" }],
+        { duration: 400 }
+      );
+    document.getElementById("body").style.backgroundColor = "#a36f6f";
   }
   //player 2
   else {
@@ -24,6 +31,7 @@ function player_turn(a) {
     document.getElementById("header").innerHTML = "Player1 turn";
     cells[a] = "O";
     if (player2.turn >= 3) player2.won = decider("O");
+    document.getElementById("body").style.backgroundColor = "#6f92a3";
   }
   document.getElementById(a).setAttribute("disabled", "");
   document.getElementById(a).style.cursor = "initial";
