@@ -32,6 +32,9 @@ function player_turn(a) {
   if (player1.turn == 5) {
     document.getElementById("header").innerHTML = "Draw!";
     document.getElementById("play").style.visibility = "visible";
+    document
+      .getElementById("play")
+      .animate([{ top: "100px" }, { top: "0px" }], { duration: 400 });
   }
 }
 function decider(str) {
@@ -52,6 +55,9 @@ function won(s) {
   for (let index = 0; index < 9; index++) {
     document.getElementById(index).setAttribute("disabled", "");
     document.getElementById(index).style.cursor = "initial";
+    document
+      .getElementById("play")
+      .animate([{ top: "100px" }, { top: "0px" }], { duration: 400 });
   }
   document.getElementById("play").style.visibility = "visible";
 }
